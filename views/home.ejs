@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Dashboard</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+ <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+
+  <h1>🎬 Movie Dashboard</h1>
+  <a href="/add" class="add-btn"><i class="fas fa-plus-circle"></i> Add New Movie</a>
+
+  <div class="movie-grid">
+    <% movies.map((movie) => { %>
+      <div class="movie-card">
+        <img src="/<%= movie.poster %>" alt="Poster">
+        <div class="movie-content">
+          <h3><i class="fas fa-clapperboard"></i> Title: <span><%= movie.title %> (<%= movie.year %>)</span></h3>
+          <div class="info">
+            <p><strong><i class="fas fa-film"></i> Genre:</strong> <span><%= movie.genre %></span></p>
+            <p><strong><i class="fas fa-user-tie"></i> Director:</strong> <span><%= movie.director %></span></p>
+            <p><strong><i class="fas fa-users"></i> Cast:</strong> <span><%= movie.cast %></span></p>
+            <p><strong><i class="fas fa-language"></i> Language:</strong> <span><%= movie.language %></span></p>
+            <p><strong><i class="fas fa-star"></i> Rating:</strong> <span><%= movie.rating %>/10</span></p>
+            <p><strong><i class="fas fa-align-left"></i> Description:</strong> <span><%= movie.description %></span></p>
+            <p><strong><i class="fas fa-calendar-alt"></i> Release Date:</strong> <span><%= movie.releaseDate.toDateString() %></span></p>
+            <p><strong><i class="fas fa-play-circle"></i> Trailer:</strong>
+              <a href="<%= movie.trailer %>" target="_blank" class="trailer-link">▶ Watch Trailer</a>
+            </p>
+          </div>
+          <div class="movie-actions">
+            <a href="/editdata?id=<%= movie._id %>" onclick="handleEdit(event, '<%= movie._id %>')">
+              <button class="btn-edit"><i class="fas fa-edit"></i> Edit</button>
+
+            </a>
+            <a href="/deletedata?id=<%= movie._id %>" onclick="handleDelete(event, '<%= movie._id %>')">
+            <button class="btn-delete">
+    <i class="fas fa-trash-alt"></i> Delete
+  </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+<script src="/js/home.js"></script>
+
+</body>
+</html>

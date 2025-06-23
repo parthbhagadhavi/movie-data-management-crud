@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Movie</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/adddata.css">
+
+  
+</head>
+<body>
+
+  <h1><i class="fas fa-plus-circle"></i> Add Movie</h1>
+
+  <div class="container">
+    <div class="form-section">
+      <form  id="movieForm"  method="POST" action="/insertdata" enctype="multipart/form-data">
+        <label for="title">🎬 Movie Title:</label>
+        <input type="text" name="title" id="title" placeholder="Movie Title" required>
+
+        <label for="genre">🎭 Genre:</label>
+        <input type="text" name="genre" id="genre" placeholder="Genre" required>
+
+        <label for="year">📅 Release Year:</label>
+        <input type="number" name="year" id="year" placeholder="Release Year" required>
+
+        <label for="director">🎬 Director:</label>
+        <input type="text" name="director" id="director" placeholder="Director">
+
+        <label for="cast">🧑‍🤝‍🧑 Cast:</label>
+        <textarea name="cast" id="cast" placeholder="Cast"></textarea>
+
+        <label for="duration">⏱️ Duration (in minutes):</label>
+        <input type="number" name="duration" id="duration" placeholder="Duration">
+
+        <label for="language">🗣️ Language:</label>
+        <input type="text" name="language" id="language" placeholder="Language">
+
+        <label for="rating">⭐ Rating (1-10):</label>
+        <input type="number" name="rating" id="rating" placeholder="Rating" min="1" max="10">
+
+        <label for="description">📝 Description:</label>
+        <textarea name="description" id="description" placeholder="Movie Description"></textarea>
+
+        <label for="image">🖼️ Poster Image Upload:</label>
+        <input type="file" name="image" id="image" accept="image/*">
+
+        <label for="releaseDate">📆 Release Date:</label>
+        <input type="date" name="releaseDate" id="releaseDate">
+
+        <label for="trailer">📽️ Trailer Link:</label>
+        <input type="url" name="trailer" id="trailer" placeholder="YouTube Trailer Link">
+
+        <button type="submit"><i class="fas fa-plus"></i> Add Movie</button>
+      </form>
+    </div>
+    <div class="image-section"></div>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="/js/adddata.js"></script>
+</body>
+</html>

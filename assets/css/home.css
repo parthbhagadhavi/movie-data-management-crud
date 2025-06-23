@@ -1,0 +1,203 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, #1c1c1c, #3a3a3a);
+      color: #ffffff;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #ffffff;
+    }
+
+    .add-btn {
+      display: block;
+      margin: 0 auto 30px auto;
+      background: #00d4ff;
+      color: #000;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      text-align: center;
+      width: 220px;
+    }
+
+    .add-btn:hover {
+      background: #00bcd4;
+      transform: scale(1.05);
+      color: #fff;
+    }
+
+    .movie-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .movie-card {
+      background: rgba(44, 44, 44, 0.85);
+      border-radius: 20px;
+      overflow: hidden;
+      width: 350px;
+      height: 550px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      border: 1px solid #00ffc8;
+    }
+
+    .movie-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.9);
+    }
+
+   .movie-card img {
+  width: 100%;
+  height: 250px;
+  max-height: 250px;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom: 2px solid #00ffc8;
+  background-color: #000; 
+}
+
+
+    .movie-content {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      overflow: hidden;
+    }
+
+    .movie-content h3 {
+      font-size: 20px;
+      color: #00ffd5;
+      margin-bottom: 14px;
+      text-align: left;
+    }
+
+    .movie-content .info {
+      flex-grow: 1;
+      overflow-y: auto;
+      max-height: 240px;
+      padding-right: 5px;
+      scrollbar-width: thin;
+    }
+
+    .movie-content .info p {
+      font-size: 14px;
+      color: #e0e0e0;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .movie-content .info p strong {
+      color: #ffffff;
+      display: inline-block;
+      width: 130px;
+    }
+
+    .movie-content .info p span {
+      color: #cccccc;
+    }
+
+    .trailer-link {
+      color: #00e1ff;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .movie-actions {
+      margin-top: 12px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .movie-actions button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      width: 100px;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .movie-actions button:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-edit {
+    background-color: #00c2ff;
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .btn-edit:hover {
+    background-color: #00a2d4;
+    color: #fff;
+  }
+
+  .btn-delete {
+    background-color: #ff4c4c;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .btn-delete:hover {
+    background-color: #e60000;
+  }
+
+    @media (max-width: 600px) {
+      .movie-card {
+        width: 100%;
+        height: auto;
+      }
+
+     @media (max-width: 600px) {
+  .movie-card img {
+    height: 160px;
+  }
+}
+
+      .movie-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .movie-actions button {
+        width: 80%;
+      }
+    }
