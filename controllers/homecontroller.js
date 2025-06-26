@@ -154,6 +154,7 @@ const deletedata = async (req, res) => {
 }
 
 const error = async (req, res) => {
+    
     res.render('404')
 }
 
